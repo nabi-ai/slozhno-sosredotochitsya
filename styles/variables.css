@@ -2,3 +2,15 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --mobile-version-max-width: 668px;
+  --vw-and-mob-max-w-diff: (100vw - var(--mobile-version-max-width));
+
+  --block-background-color: #FF0070;
+  --block-rose-letter-color: #F1B2CE;
+  --block-black-letter-color: #000028;
+  --theme-switch: #FF0070;
+  --hover-color: rgba(255, 0, 112, 0.4);
+  --link-effects: #FF0070;
+  --header-title-color: #DB00FF;
+}
