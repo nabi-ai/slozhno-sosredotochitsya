@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
+    <link rel="stylesheet" href="./styles/auto.css" />
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
     <link rel="mobile-icon" href="./images/mobile-icon.png" />
     <title>Сложно сосредоточиться</title>
   </head>
   <body class="page">
-    <header class="header decorated-zone corners">
+    <header class="header decorated-zone">
       <span class="header__decor-theme_dark" aria-hidden="true"></span>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
@@ -53,7 +54,7 @@
     </header>
     <main class="content">
       <section class="content-section why-text">
-        <h2 class="content-section__header header-text header__accent">
+        <h2 class="content-section__header header-text">
           Почему сосредоточиться так сложно
         </h2>
         <div class="content-section__cards">
@@ -92,7 +93,7 @@
         </div>
       </section>
       <section class="content-section reasons-text">
-        <h2 class="content-section__header header-text header__accent">
+        <h2 class="content-section__header header-text">
           Что снижает концентрацию внимания?
         </h2>
         <div class="content-section__cards">
@@ -133,7 +134,7 @@
         </div>
       </section>
       <section class="content-section how-to-text">
-        <h2 class="content-section__header header-text header__accent">
+        <h2 class="content-section__header header-text">
           Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
           секунд)
         </h2>
@@ -212,53 +213,53 @@
           </div>
         </div>
       </section>
-      <section class="content-section">
+      <section class="content-section gallery">
         <h2 class="content-section__header header-text title-decor">А можно в картинках?</h2>
-        <div class="content-section__gallery">
-          <div class="content-section__gallery__sunset">
+        <ul class="gallery__list">
+          <li class="gallery__list__sunset">
             <img
               class="content-section__picture"
               src="./images/sunset.png"
               alt="Солнце, садящееся за горы, перед горами море, над которыми летают чайки"
               loading="lazy"
             />
-          </div>
-          <div class="content-section__gallery__ice-cream">
+          </li>
+          <li class="gallery__list__ice-cream">
             <img
               class="content-section__picture"
               src="./images/ice-cream.png"
               alt="Рисунок порции мороженого с разными фруктами"
               loading="lazy"
             />
-          </div>
-          <div class="content-section__gallery__tape">
+          </li>
+          <li class="gallery__list__tape">
             <img
               class="content-section__picture"
               src="./images/tape.png"
               alt="Рисунок аудикассеты в окружении проигрывателя и окон, оформленных в очень старой весии виндовс"
               loading="lazy"
             />
-          </div>
-          <div class="content-section__gallery__books">
+          </li>
+          <li class="gallery__list__books">
             <img
               class="content-section__picture"
               src="./images/books.png"
               alt="Рисунок большой стопки различных книг, на вершине которой стоит чашка на блюдце"
               loading="lazy"
             />
-          </div>
-          <div class="content-section__gallery__street">
+          </li>
+          <li class="gallery__list__street">
             <img
               class="content-section__picture"
               src="./images/street.png"
               alt="Рисунок тихой узкой улочки в японском городе"
               loading="lazy"
             />
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
     </main>
-    <footer class="footer decorated-zone corners">
+    <footer class="footer decorated-zone">
       <h2 class="footer__title">focus</h2>
     </footer>
     <script src="./scripts/script.js"></script>

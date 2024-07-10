@@ -5,12 +5,9 @@
 :root {
   --mobile-version-max-width: 668px;
   --vw-and-mob-max-w-diff: (100vw - var(--mobile-version-max-width));
-
-  --block-background-color: #FF0070;
-  --block-rose-letter-color: #F1B2CE;
-  --block-black-letter-color: #000028;
-  --theme-switch: #FF0070;
-  --hover-color: rgba(255, 0, 112, 0.4);
-  --link-effects: #FF0070;
-  --header-title-color: #DB00FF;
+  --main-font-family: "IBM Plex mono", sans-serif;
+  --focus-font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --focus-line-height-mobile: clamp(5.98125rem, 5.7844rem + 0.8397vw, 6.1875rem);
+  --focus-font-size-not-mobile: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --focus-line-height-not-mobile: clamp(6.1875rem, 0.4631rem + 11.9258vw, 8.095625rem);
 }

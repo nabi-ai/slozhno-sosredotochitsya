@@ -3,16 +3,15 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 
-  background: url(../images/cover-image-dark.png) center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   max-width: 1440px;
-  font-family: "IBM Plex mono", sans-serif;
+  font-family: var(--main-font-family);
 }
 
-.corners {
+.decorated-zone {
   &::before {
     content: "";
     position: absolute;
@@ -36,7 +35,7 @@
   }
 }
 
-header {
+.header {
   position: relative;
   display: grid;
   align-items: center;
@@ -46,13 +45,13 @@ header {
     "theme"
     "title"
     "text";
-  block-size: 100vh;
+  min-block-size: 100vh;
   padding: 10px;
   margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
-  header {
+  .header {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       ". theme"
@@ -64,7 +63,7 @@ header {
 }
 
 @media (min-width: 1024px) {
-  header {
+  .header {
     grid-template-areas:
       "theme theme"
       "title title"
@@ -80,14 +79,14 @@ header {
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
-  color: #ff0070;
+  color: var(--theme-switch);
 }
 
 .header__decor-theme_dark::after {
   content: "";
   position: absolute;
-  background-color: #ff0070;
-  box-shadow: 0px 0px 4px 2px #ff0070;
+  background-color: var(--theme-switch);
+  box-shadow: 0px 0px 4px 2px var(--theme-switch);
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
@@ -124,18 +123,17 @@ header {
   grid-area: title;
   position: relative;
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: clamp(5.98125rem, 5.7844rem + 0.8397vw, 6.1875rem);
-  color: var(--header-title-color);
-  text-shadow: 4px 4px 0 #ff0070;
-  margin-left: -2px;
+  font-size: var(--focus-font-size-mobile);
+  line-height: var(--focus-line-height-mobile);
+  color: var(--focus-title-color);
+  text-shadow: 4px 4px 0 var(--focus-shadow-color);
 }
 
 @media (min-width: 768px) {
   .header__title {
     margin-left: -20px;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    line-height: clamp(6.1875rem, 0.4631rem + 11.9258vw, 8.095625rem);
+    font-size: var(--focus-font-size-not-mobile);
+    line-height: var(--focus-line-height-not-mobile);
   }
 }
 
@@ -143,7 +141,7 @@ header {
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--block-background-color);
+  color: var(--theme-switch);
 }
 
 .header__paragraph {
@@ -152,8 +150,6 @@ header {
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  color: #000028;
-  background-color: var(--block-background-color);
   justify-self: end;
 }
 
@@ -172,10 +168,6 @@ header {
     > section {
       margin-bottom: 80px;
     }
-
-    > section:last-child {
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -193,11 +185,12 @@ header {
 }
 
 .content__link:hover {
-  border-bottom: 2px solid #353430;
+  border-bottom: 1px solid #353430;
 }
+/* по макету из Фигмы там не рамка, а подчеркивание */
 
 .content__link:focus {
-  border: 1px solid #353430;
+  outline: 1px solid #353430;
 }
 
 .why-text {
@@ -228,7 +221,7 @@ header {
 @media (min-width: 768px) {
   .reasons-text {
     > .header-text {
-      max-width: 236px;
+      max-inline-size: 236px;
     }
   }
 }
@@ -236,7 +229,7 @@ header {
 @media (min-width: 1024px) {
   .reasons-text {
     > .header-text {
-      max-width: 315px;
+      max-inline-size: 315px;
     }
 
     > .content-section__cards {
@@ -292,7 +285,7 @@ footer {
   justify-content: center;
   position: relative;
   padding: 10px;
-  block-size: 100vh;
+  min-block-size: 100vh;
   margin-top: 40px;
 }
 
@@ -304,11 +297,18 @@ footer {
 
 .footer__title {
   position: relative;
-  color: #db00ff;
-  font-size: 116px;
+  color: var(--focus-title-color);
+  font-size: var(--focus-font-size-mobile);
+  line-height: var(--focus-line-height-mobile);
   font-weight: 700;
-  line-height: 95.7px;
-  text-shadow: 2px 2px 0 #ff0070;
+  text-shadow: 2px 2px 0 var(--focus-shadow-color);
+}
+
+@media (min-width: 768px) {
+  .footer__title {
+    font-size: var(--focus-font-size-not-mobile);
+    line-height: var(--focus-line-height-not-mobile);
+  }
 }
 
 .header__theme-menu {
@@ -330,18 +330,20 @@ footer {
   background-color: transparent;
   border: none;
   padding: 0 13px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--theme-switch);
+  outline: 1px solid var(--theme-switch);
   pointer-events: none;
-  line-height: 24px;
 }
 
 .header__theme-menu-button_active:hover {
-  border: 1px solid var(--theme-switch);
+  outline: 1px solid var(--theme-switch);
   cursor: auto;
 }
+
+/* не поняла, что тут нужно сделать при ховере(( */
 
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-color);
@@ -375,7 +377,13 @@ footer {
   margin-bottom: 20px;
 }
 
-.content-section__gallery {
+@media (max-width: 767px) {
+  .content-section.gallery .content-section__header {
+    margin-bottom: 10px;
+  }
+}
+
+.gallery__list {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, max-content);
@@ -383,7 +391,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .content-section__gallery {
+  .gallery__list {
     grid-template-rows: repeat(3, max-content);
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
@@ -393,29 +401,35 @@ footer {
     gap: 20px;
   }
 
-  .content-section__gallery__sunset {
+  .gallery__list__sunset {
     grid-area: sunset;
   }
 
-  .content-section__gallery__ice-cream {
+  .gallery__list__ice-cream {
     grid-area: cream;
   }
 
-  .content-section__gallery__tape {
+  .gallery__list__tape {
     grid-area: tape;
   }
 
-  .content-section__gallery__books {
+  .gallery__list__books {
     grid-area: books;
   }
 
-  .content-section__gallery__street {
+  .gallery__list__street {
     grid-area: street;
   }
 }
 
 .content-section__picture {
+  display: block;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .content-section__picture {
+    height: 100%;
+  }
 }

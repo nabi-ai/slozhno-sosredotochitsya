@@ -1,0 +1,38 @@
+/*
+  @media queries для автоматической темы
+*/
+
+@media (prefers-color-scheme: dark) {
+  .page.theme_auto {
+    --block-background-color: #ff0070;
+    --block-rose-letter-color: #f1b2ce;
+    --block-black-letter-color: #000028;
+    --theme-switch: #ff0070;
+    --hover-color: rgba(255, 0, 112, 0.4);
+    --link-effects: #ff0070;
+    --focus-title-color: #db00ff;
+    --focus-shadow-color: rgba(255, 0, 112, 1);
+
+    background-image: url(../images/cover-image-dark.png);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .page.theme_auto {
+    --block-background-color: #ff8dcb;
+    --block-rose-letter-color: #353430;
+    --block-black-letter-color: #353430;
+    --theme-switch: #353430;
+    --hover-color: rgba(50, 49, 45, 0.4);
+    --link-effects: #ff8dcb;
+    --focus-title-color: #ffc2e6;
+    --focus-shadow-color: rgba(255, 141, 203, 1);
+
+    background-image: url(../images/cover-image-light.png);
+  }
+
+  .page.theme_auto .header__decor-theme_dark::before,
+  .page.theme_auto .header__decor-theme_dark::after {
+    content: none;
+  }
+}
