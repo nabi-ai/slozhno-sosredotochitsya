@@ -45,7 +45,8 @@
     "theme"
     "title"
     "text";
-  min-block-size: 100vh;
+  block-size: 100vh;
+  min-block-size: 668рх;
   padding: 10px;
   margin-bottom: 40px;
 }
@@ -59,6 +60,7 @@
       ". text";
     padding: 20px;
     margin-bottom: 60px;
+    min-block-size: 1024px;
   }
 }
 
@@ -68,6 +70,7 @@
       "theme theme"
       "title title"
       ". text";
+    min-block-size: 768рх;
   }
 }
 
@@ -185,12 +188,11 @@
 }
 
 .content__link:hover {
-  border-bottom: 1px solid #353430;
+  border-bottom: 1px solid var(--link-status-color);
 }
-/* по макету из Фигмы там не рамка, а подчеркивание */
 
 .content__link:focus {
-  outline: 1px solid #353430;
+  outline: 1px solid var(--link-status-color);
 }
 
 .why-text {
@@ -285,13 +287,21 @@ footer {
   justify-content: center;
   position: relative;
   padding: 10px;
-  min-block-size: 100vh;
+  block-size: 100vh;
+  min-block-size: 668рх;
   margin-top: 40px;
 }
 
 @media (min-width: 768px) {
   footer {
     margin-top: 60px;
+    min-block-size: 1024рх;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    min-block-size: 768рх;
   }
 }
 
@@ -338,15 +348,9 @@ footer {
   pointer-events: none;
 }
 
-.header__theme-menu-button_active:hover {
-  outline: 1px solid var(--theme-switch);
-  cursor: auto;
-}
-
-/* не поняла, что тут нужно сделать при ховере(( */
-
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-button:focus {

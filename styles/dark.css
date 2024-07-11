@@ -18,7 +18,25 @@
   --link-effects: #FF0070;
   --focus-title-color: #DB00FF;
   --focus-shadow-color: rgba(255, 0, 112, 1);
+  --link-status-color: #F1B2CE;
 
   background-image: url(../images/cover-image-dark.png);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --block-background-color: #ff0070;
+    --block-rose-letter-color: #f1b2ce;
+    --block-black-letter-color: #000028;
+    --theme-switch: #ff0070;
+    --hover-color: rgba(255, 0, 112, 0.4);
+    --link-effects: #ff0070;
+    --focus-title-color: #db00ff;
+    --focus-shadow-color: rgba(255, 0, 112, 1);
+    --link-status-color: #F1B2CE;
+  }
+
+  .page.theme_auto {
+    background-image: url(../images/cover-image-dark.png);
+  }
+}
